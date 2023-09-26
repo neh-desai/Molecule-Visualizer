@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>CIS2750A4</title>
+    <link rel="stylesheet" type='text/css' href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>
+      <script>
+        var molD = sessionStorage.getItem('current')
+        document.write("Here is your " + molD + " molecule!")
+      </script>
+    </h1>
+    <body onload="loadMol()">
+      <div id="imgBorder">
+        <img id="showImg">
+      </div>
+    </body>
+    <p id="ask">Enter the degrees you want to rotate your molecule (-360 to 360 only): </p>
+    <p id="ask">Note that the rotations are done to the original image.</p>
+    <div class="rotButtons">
+      <input type="text" onkeyup="this.value = (this.value[0] === '-') ? ('-' + this.value.replace(/[^0-9]/g, '')) : (this.value.replace(/[^0-9]/g, ''));" pattern="^-?\d+" id="rotateNum" placeholder="e.g. 90">
+    </div>
+    <div class="rotButtons">
+      <br>
+      <input class="button" id="X" type="button" value="Rotate Along X" />
+      <input class="button" id="Y" type="button" value="Rotate Along Y" />
+      <input class="button" id="Z" type="button" value="Rotate Along Z" />
+    </div>
+    <script>
+      function locations() {
+        window.location.href = 'index.html';
+      }
+    </script>
+    <input class="button" type="button" value="Back to Main Menu" onclick="locations()">
+  </body>
+</html>

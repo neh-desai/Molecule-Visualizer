@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIS2750A4</title>
+    <link rel="stylesheet" type='text/css' href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1> CIS2750 A4 Molecule Viewer Webpage </h1>
+    <h2>If you wish to Add/Remove an element please fill in the fields below</h2>
+    <form method="post">
+      <p>Enter the element number from the periodic table:</p>
+      <input type="Number" id="Enum" onkeyup=checkEnum(this) name="Enum" placeholder="e.g. 1">
+      <p>Enter the element code (Maximum length of 3):</p>
+      <input type="text" maxlength="3" onkeyup=checkInput(this) id="Ecode" name="Ecode" placeholder="e.g. H">
+      <p>Enter the element name:</p>
+      <input type="text" maxlength="32" onkeyup=checkInput(this) id="Ename" name="Ename" placeholder="e.g. Hydrogen">
+      <p>Enter the first colour (In hexadecimal):</p>
+      <input type="text" id="Ec1" onkeyup="checkInput2(this)" maxlength="6" name="Ec1" placeholder="e.g. FFFFFF">
+      <p>Enter the second colour (In hexadecimal):</p>
+      <input type="text" id="Ec2" onkeyup="checkInput2(this)" maxlength="6" name="Ec2" placeholder="e.g. 050505">
+      <p>Enter the third colour (In hexadecimal):</p>
+      <input type="text" id="Ec3" onkeyup="checkInput2(this)" maxlength="6" name="Ec3" placeholder="e.g. 020202">
+      <p>Enter the radius of the element:</p>
+      <input type="text" oninput="validateRad(this);" id="Erad" min="0" max="999" name="Erad" placeholder="e.g. 25">
+      <script>
+        var validNumber = new RegExp(/^\d*\.?\d*$/);
+        var lastInput = document.getElementById("Erad").value;
+
+        function validateRad(text) {
+          if (validNumber.test(text.value)) {
+            lastInput = text.value;
+          } else {
+            text.value = lastInput;
+          }
+        }
+      </script>
+      <div>
+        <br>
+        <input class="button" id="Add" type="button" value="Add" />
+        <select class="selectBox" id='Removing'>
+          <option value="" hidden=" ">Choose An Added Element To Remove</option>
+        </select>
+        <input class="button" id="Remove" type="button" value="Remove" />
+      </div>
+    </form>
+    <h2>Upload files of your molecule for viewing</h2>
+    <div>
+      <p>Please select an SDF file to uplaod:</p>
+      <form enctype="multipart/form-data" method="post">
+        <section id="fileBorder">
+          <p>
+            <input type="file" id="sdf_file" name="filename" />
+          </p>
+        </section>
+    </div>
+    <p>Enter the name of your uploaded molecule:</p>
+    <input type="text" onkeyup=checkInput(this) id="userName" name="Erad" placeholder="e.g. Water">
+    <p>
+      <input class="button" type="button" id="UploadButton" value="Upload" />
+    </p>
+    </form>
+    <form>
+      <h2> Select Molecules To Display</h2>
+      <p>Please choose which molecule you want to display and click the button to the right</p>
+     
+      <div>
+        <select class="selectBox" id="DisplayM" name="Molecule-option">
+          <option value="" hidden=" ">Choose A Molecule To Display</option>
+        </select>
+        <input class="button" id="Display" type="button" value="Display My Molecule" />
+      </div>
+    </form>
+    <br>
+  </body>
+</html>

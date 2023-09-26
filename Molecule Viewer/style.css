@@ -1,0 +1,106 @@
+h1{
+text-align: center;
+}
+
+*{
+background-color:#ADD8E6;
+color:black;
+font-family: "Times New Roman";
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* color: rgb(30, 96, 238); */
+    color: #00008B; 
+    opacity: 0.8; /* Firefox */
+  }
+
+input[type=text] {
+  border: 2px solid #000000;
+  }
+
+input[type=text]:focus {
+    border: 3px solid #000000;
+}
+
+input[type=number] {
+    border: 2px solid #000000;
+}
+
+input[type=number]:focus {
+      border: 3px solid #000000;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 40%; */
+}
+#fileBorder{
+  border: 2px solid rgb(0, 0, 0);
+  width:fit-content; 
+  width:-webkit-fit-content; 
+  width:-moz-fit-content;
+}
+#imgBorder{
+  border: 2px solid rgb(0, 0, 0);
+  width:fit-content; 
+  width:-webkit-fit-content; 
+  width:-moz-fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+#ask{
+  text-align: center;
+}
+.selectBox {
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  margin-bottom: 5px; /* space to next menu item */
+  padding-bottom: 5px; /* space between text and border bottom */
+  border-radius:36px;
+  display:inline-block;
+  overflow:hidden;
+}
+
+input[type=file] {
+  background-color: #000080; 
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #000000;
+}
+
+input[type=file]:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#fileBorder{
+  background-color: #000080; 
+}
+
+.button {
+  background-color: #000080; 
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #000000;
+}
+.button:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.rotButtons{
+  text-align:center;
+}
